@@ -9,8 +9,10 @@ package app
 
 import (
 	"github.com/QinLiStudio/Conship/internal/app/config"
+	"github.com/QinLiStudio/Conship/internal/app/entity"
 	"github.com/QinLiStudio/Conship/pkg/gormx"
 	"gorm.io/gorm"
+	"strings"
 )
 
 /**
@@ -53,4 +55,17 @@ func NewGormDB() (*gorm.DB, error) {
 		MaxLifetime:  cfg.Gorm.MaxLifetime,
 		MaxOpenConns: cfg.Gorm.MaxOpenConns,
 		TablePrefix:  cfg.Gorm.TablePrefix})
+}
+
+/**
+ * @description: gorm 数据库自动建表
+ * @param {*gorm.DB} db
+ * @return {*}
+ */
+func AutoMigrate(db *gorm.DB) error {
+	if dbType := config.C.Gorm.DBType; strings.ToLower(dbType) == "postgres" {
+		db = db.Set("gorm:table_options", "ENGINE=InnoDB")
+	}
+
+	return db.AutoMigrate(new(entity.CorrespondingTable))
 }

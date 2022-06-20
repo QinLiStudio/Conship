@@ -7,12 +7,13 @@
  */
 package entity
 
-import "gorm.io/gorm"
+import (
+	"gorm.io/gorm"
+)
 
-type Conship struct {
+type CorrespondingTable struct {
 	gorm.Model
 
-	Url  string `json:"url" binding:"required"`
-	Link string `json:"link" binding:"max=8"`
-	Key  string `json:"key" binding:"max=8"`
+	Link   string `json:"link" binding:"max=8"`
+	Secret string `json:"key" binding:"max=8"`
 }
