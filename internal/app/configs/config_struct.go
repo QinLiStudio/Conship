@@ -1,16 +1,9 @@
-//Author: lxk20021217
-//Date: 2022-06-17 23:33:31
-//LastEditTime: 2022-06-19 00:34:45
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\configs\config_struct.go
-//是谁总是天亮了才睡
 
 //Author: lxk20021217
 //Date: 2022-06-17 23:33:31
-//LastEditTime: 2022-06-19 00:42:02
+//LastEditTime: 2022-06-24 15:15:40
 //LastEditors: lxk20021217
-//Description:
+//Description: 
 //FilePath: \Conship\internal\app\configs\config_struct.go
 //是谁总是天亮了才睡
 
@@ -29,10 +22,9 @@ type Http struct {
 }
 
 type Log struct {
-	Highfile string `mapstructure:"highfile"`
 	Level    int    `mapstructure:"level"`
-	Lowfile  string `mapstructure:"lowfile"`
 }
+
 type Redis struct {
 	Addr     string `mapstructure:"addr"`
 	Password string `mapstructure:"password"`

@@ -1,14 +1,12 @@
 [Http]
 # http监听地址
-Host = "http://golang.fzf404.top"
+Host = "0.0.0.0"
 # http监听端口
 Port = 8080
 
 [Log]
 # 日志级别(-1:debug,0:info 1:warn,2:error,3:panic)
-Highfile = "./tem/high.log"
 Level = 0
-Lowfile = "./tem/low.log"
 
 # redis配置信息
 [Redis]
