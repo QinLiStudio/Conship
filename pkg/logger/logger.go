@@ -2,8 +2,8 @@
  * @Author: git config SnowFish && git config 3200401354@qq.com
  * @Date: 2022-06-19 16:59:39
  * @LastEditors: git config SnowFish && git 3200401354@qq.com
- * @LastEditTime: 2022-06-22 19:24:14
- * @FilePath: \Conship\Conship\pkg\logger\logger.go
+ * @LastEditTime: 2022-07-07 11:45:13
+ * @FilePath: \Conship\pkg\logger\logger.go
  * @Description: 
  * 
  * Copyright (c) 2022 by snow-fish 3200401354@qq.com, All Rights Reserved. 
@@ -15,9 +15,9 @@ import (
 )
 
 //应来自app的全局logger
-var logger *zap.Logger
-logger, _ = zap.NewProduction()
+var logger2 *zap.Logger
 
+logger2=Logger
 
 //func (log *Logger) MethodXXX(msg string, fields ...Field)    日志记录函数语法
 /*
@@ -30,13 +30,13 @@ func (log *Logger) Info(msg string, fields ...Field)
 
 //关于logger的相应事例
 
-  Logger.Debug("this is debug message")
-  logger.Info("this is info message")
-  logger.Info("this is info message with fileds",
+  Logger2.Debug("this is debug message")
+  logger2.Info("this is info message")
+  logger2.Info("this is info message with fileds",
 	zap.Int("code", 400), zap.String("error", "..."))
-  logger.Warn("this is warn message")
-  logger.Error("this is error message")
-  logger.Panic("this is panic message")
+  logger2.Warn("this is warn message")
+  logger2.Error("this is error message")
+  logger2.Panic("this is panic message")
 
 
 

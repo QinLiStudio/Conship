@@ -11,7 +11,7 @@
 package refraction
 
 //数据库映射结构体
-type toDB struct {
+type ToDB struct {
 	Host     string // 服务器地址
 	Port     string // 端口
 	Username string // 数据库用户名
@@ -22,5 +22,5 @@ type toDB struct {
 
 //viper解析所需中间结构体
 type DBconf struct {
-	Postgres toDB
+	Postgres ToDB
 }

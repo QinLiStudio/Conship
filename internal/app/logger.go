@@ -2,8 +2,8 @@
  * @Author: git config SnowFish && git config 3200401354@qq.com
  * @Date: 2022-06-19 16:59:39
  * @LastEditors: git config SnowFish && git 3200401354@qq.com
- * @LastEditTime: 2022-06-22 19:24:06
- * @FilePath: \Conship\Conship\internal\app\logger.go
+ * @LastEditTime: 2022-07-07 11:39:52
+ * @FilePath: \Conship\internal\app\logger.go
  * @Description:
  *
  * Copyright (c) 2022 by snow-fish 3200401354@qq.com, All Rights Reserved.
@@ -17,12 +17,14 @@ import (
 	"go.uber.org/zap/zapcore"
 )
 
-//此Logger应在app中作为全局变量
-var logger *zap.Logger
+//局部变量logger1
+var logger1 *zap.Logger
+
+logger1=Logger //赋值给Logger1
 
 //初始化一个production型的Logger
 func InitLogger() {
-	logger, _ = zap.NewProduction()
+	logger1, _ = zap.NewProduction()
 }
 
 //logger写入文件
@@ -34,8 +36,7 @@ func Initfile() {
 	encoder := getEncoder()
 	core := zapcore.NewCore(encoder, writeSyncer, zapcore.DebugLevel)
 
-	logger := zap.New(core)
-	sugarLogger := logger.Sugar() //sugarLogger可作为能写入文件形式的logger变量
+	logger1 := zap.New(core)
 }
 
 //调用sugarLogger
@@ -44,19 +45,21 @@ func Log() {
 
 	//simpleHttpGet("www.baidu.com") 举例simpleHttpGet调用
 
-	defer sugarLogger.Sync() //结束前写入文件
+	// defer sugarLogger.Sync() //结束前写入文件
+
+	defer logger1.Sync()//打印logger1
 }
 
-//写入模式
-func getEncoder() zapcore.Encoder {
-	return zapcore.NewJSONEncoder(zap.NewProductionEncoderConfig())
-}
+// //写入模式
+// func getEncoder() zapcore.Encoder {
+// 	return zapcore.NewJSONEncoder(zap.NewProductionEncoderConfig())
+// }
 
-//写入位置
-func getLogWriter() zapcore.WriteSyncer {
-	file, _ := os.Create("./Conship/logger/test.log")
-	return zapcore.AddSync(file)
-}
+// //写入位置
+// func getLogWriter() zapcore.WriteSyncer {
+// 	file, _ := os.Create("./Conship/logger/test.log")
+// 	return zapcore.AddSync(file)
+// }
 
 //simpleHttpGet函数举例
 /*
@@ -71,3 +74,5 @@ func simpleHttpGet(url string) {
 	}
 }
 */
+
+Logger=logger1 //还值给Logger
