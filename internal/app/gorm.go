@@ -12,24 +12,20 @@ package app
 
 import (
 	"database/sql"
-	// "github.com/QinLiStudio/Conship/pkg/utils/refraction"
-	_ "github.com/lib/pq"
+	"github.com/QinLiStudio/Conship/pkg/utils/refraction_struct"
+  _ "github.com/lib/pq"
 )
 
 //数据库变量DBS
-var db *DB //临时数据库变量
+var db *sql.DB  //临时mysql数据库变量
 
-db=DBS //赋值给db
-
-var dbc *DBconf //临时解析结构体
-
-dbc=DBC //赋值给dbc
+// var dbc *DBconf //临时解析结构体
 
 
 //数据库开启链接函数
 func DbOpen() {
 	//sql.Open("postgres", "host=localhost port=5432 user=postgres password=123456 dbname=Test sslmode=disable")
-	db, err := sql.Open(dbc.Postgres.Dsn())
+	db, err := sql.Open(DBC.Postgres0.Dsn())
 	if err != nil {
 		//错误信息
 	} else {

@@ -2,21 +2,21 @@
  * @Author: git config SnowFish && git config 3200401354@qq.com
  * @Date: 2022-06-22 15:46:44
  * @LastEditors: git config SnowFish && git 3200401354@qq.com
- * @LastEditTime: 2022-07-07 11:18:31
- * @FilePath: \Conship\pkg\utils\refraction\refraction_method.go
+ * @LastEditTime: 2022-07-08 18:27:30
+ * @FilePath: \Conship\pkg\utils\refraction_method\refraction_method.go
  * @Description:
  *
  * Copyright (c) 2022 by snow-fish 3200401354@qq.com, All Rights Reserved.
  */
-package refraction
+package refraction_method
 
 import (
 	"log"
-
 	"github.com/spf13/viper"
+	"github.com/QinLiStudio/Conship/internal/app"
 )
 
-//DSN配置返回String
+//DSN配置mysql返回String
 func (todb *ToDB) Dsn() string {
 	return "\"" + todb.Username + "\"" + "," + "\"" + "host=" + todb.Host + " " + "port=" + todb.Port + " " + "user=" + todb.Username + " " + "password=" + todb.Password + " " + "dbname=" + todb.DBname + "sslmoded=" + todb.SSLMode + "\""
 }
@@ -25,7 +25,7 @@ func (todb *ToDB) Dsn() string {
 
 var Postgres *DBconf //解析所需类型结构体
 
-Postgres=DBC //赋值
+Postgres=app.DBC //赋值
 
 func Config() {
 	// 文件路径
@@ -44,4 +44,5 @@ func Config() {
 	}
 }
 
-DBC =Postgres //还值
+ Postgres.Postgres0=app.DBS //还值mysql
+ Postgres.Postgres1=app.DBR //还值redis
