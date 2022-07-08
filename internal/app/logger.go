@@ -2,8 +2,8 @@
  * @Author: git config SnowFish && git config 3200401354@qq.com
  * @Date: 2022-06-19 16:59:39
  * @LastEditors: git config SnowFish && git 3200401354@qq.com
- * @LastEditTime: 2022-07-07 11:45:13
- * @FilePath: \Conship\pkg\logger\logger.go
+ * @LastEditTime: 2022-07-08 20:31:45
+ * @FilePath: \Conship\internal\app\logger.go
  * @Description:
  *
  * Copyright (c) 2022 by snow-fish 3200401354@qq.com, All Rights Reserved.
