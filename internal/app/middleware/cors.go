@@ -1,5 +1,13 @@
 //Author: lxk20021217
 //Date: 2022-06-17 16:27:53
+//LastEditTime: 2022-07-10 15:41:10
+//LastEditors: lxk20021217
+//Description:
+//FilePath: \Conship\internal\app\middleware\cors.go
+//是谁总是天亮了才睡
+
+//Author: lxk20021217
+//Date: 2022-06-17 16:27:53
 //LastEditTime: 2022-06-19 19:33:20
 //LastEditors: lxk20021217
 //Description:
@@ -18,7 +26,7 @@ import (
 
 func Cors() gin.HandlerFunc {
 	c := cors.DefaultConfig()
-	c.AllowMethods = []string{"GET", "POST", "OPTIONS"}
+	c.AllowMethods = []string{"GET", "POST", "OPTIONS", "PUT", "DELETE"}
 	c.AllowHeaders = []string{"Origin", "Content-Length", "Content-Type"}
 	if gin.Mode() == gin.ReleaseMode {
 		// 生产环境配置跨域域名，否则 403

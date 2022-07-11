@@ -1,0 +1,9 @@
+
+2022-07-10T21:00:52.668+0800	[31mERROR[0m	logger/logger.go:90	s:123
+2022-07-10T21:31:39.341+0800	[31mERROR[0m	logger/logger.go:90	s:123
+2022-07-10T21:31:41.624+0800	[31mERROR[0m	logger/logger.go:90	s:123
+2022-07-10T21:31:42.618+0800	[31mERROR[0m	logger/logger.go:90	s:123
+2022-07-10T21:31:43.428+0800	[31mERROR[0m	logger/logger.go:90	s:123
+2022-07-10T21:31:55.142+0800	[31mERROR[0m	logger/logger.go:90	s:123
+2022-07-11T14:09:39.395+0800	[31mERROR[0m	logger/logger.go:90	连接 Postgres 失败: failed to connect to `host=127.0.0.1 user=postgres database=postgres`: dial error (dial tcp 127.0.0.1:5432: connectex: No connection could be made because the target machine actively refused it.)
+2022-07-11T14:09:41.451+0800	[31mERROR[0m	logger/logger.go:90	连接 redis 失败: dial tcp 127.0.0.1:6379: connectex: No connection could be made because the target machine actively refused it.

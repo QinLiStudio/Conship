@@ -1,14 +1,15 @@
+
 //Author: lxk20021217
 //Date: 2022-06-16 19:56:00
-//LastEditTime: 2022-06-24 15:14:58
+//LastEditTime: 2022-07-02 17:32:35
 //LastEditors: lxk20021217
-//Description:
+//Description: 
 //FilePath: \Conship\pkg\logger\logger.go
 //是谁总是天亮了才睡
 
 //Author: lxk20021217
 //Date: 2022-06-16 19:56:00
-//LastEditTime: 2022-06-19 19:32:50
+//LastEditTime: 2022-06-24 15:14:58
 //LastEditors: lxk20021217
 //Description:
 //FilePath: \Conship\pkg\logger\logger.go
@@ -37,7 +38,7 @@ const (
 	PanicLevel
 )
 
-func initZap() {
+func InitZap() {
 	encoderConfig := zap.NewProductionEncoderConfig()
 	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
 	encoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder

@@ -8,7 +8,7 @@
 
 //Author: lxk20021217
 //Date: 2022-06-19 00:33:25
-//LastEditTime: 2022-06-19 19:41:55
+//LastEditTime: 2022-07-10 15:35:54
 //LastEditors: lxk20021217
 //Description:
 //FilePath: \Conship\internal\app\db\redis.go
@@ -17,13 +17,12 @@
 package db
 
 import (
-	"log"
-
 	"github.com/QinLiStudio/Conship/internal/app/configs"
+	"github.com/QinLiStudio/Conship/pkg/logger"
 	"github.com/go-redis/redis"
 )
 
-func Redis() {
+func InitRedis() {
 	// 获取 redis 配置
 	r := configs.CONFIG.Redis
 	// 建立连接
@@ -34,9 +33,9 @@ func Redis() {
 	// 测试连接
 	pong, err := client.Ping().Result()
 	if err != nil {
-		log.Fatal("连接redis失败: ", err)
+		logger.Error("连接 redis 失败: %v", err)
 	} else {
 		configs.REDISDB = client
-		log.Print("连接redis成功: ", pong)
+		logger.Info("连接 redis 成功: %v", pong)
 	}
 }

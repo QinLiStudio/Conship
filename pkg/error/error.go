@@ -1,5 +1,13 @@
 //Author: lxk20021217
 //Date: 2022-06-21 21:58:59
+//LastEditTime: 2022-07-10 23:56:07
+//LastEditors: lxk20021217
+//Description:
+//FilePath: \Conship\pkg\error\error.go
+//是谁总是天亮了才睡
+
+//Author: lxk20021217
+//Date: 2022-06-21 21:58:59
 //LastEditTime: 2022-06-24 14:49:20
 //LastEditors: lxk20021217
 //Description:
@@ -25,8 +33,8 @@ var (
 )
 
 func (r *ResponseError) Error() string {
-	if r.ERR != nil {
-		return r.ERR.Error()
+	if r.Err != nil {
+		return r.Err.Error()
 	}
 	return r.Message
 }

@@ -39,7 +39,7 @@ type ResponseError struct {
 	Code    int    // 错误码
 	Status  int    // 响应状态码
 	Message string // 返回消息
-	ERR     error  // 响应错误
+	Err     error  // 响应错误
 }
 
 type ResponseNormal struct {
@@ -61,7 +61,7 @@ func ResponseErr(c *gin.Context, code int, status int, message string, err error
 		Code:    code,
 		Status:  status,
 		Message: message,
-		ERR:     err,
+		Err:     err,
 	})
 }
 

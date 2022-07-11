@@ -1,0 +1,267 @@
+2022-07-10T15:50:42.446+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T15:50:42.527+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T15:50:42.529+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T15:50:42.533+0800	[34mINFO[0m	logger/logger.go:82	Hello,Conship!
+2022-07-10T15:54:44.891+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T15:54:44.951+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T15:54:44.953+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:31:52.541+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:31:52.681+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:31:52.684+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:39:43.457+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:39:43.555+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:39:43.558+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:39:44.670+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:39:44.767+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:39:44.772+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:39:57.046+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:39:59.990+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:40:00.097+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:40:00.101+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:40:01.940+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:40:02.017+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:40:02.021+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:40:14.839+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:40:14.973+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:40:14.978+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:40:19.727+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:40:19.821+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:40:19.825+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:40:21.038+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:40:21.121+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:40:21.125+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:40:25.832+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:40:25.919+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:40:25.922+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:40:28.119+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:40:28.215+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:40:28.220+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:42:38.946+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:42:39.023+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:42:39.025+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:51:13.222+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:51:13.288+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:51:13.290+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:55:09.553+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:55:09.616+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:55:09.618+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T19:59:06.408+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T19:59:06.492+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T19:59:06.495+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:00:48.412+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:00:48.497+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:00:48.500+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:01:55.801+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:01:55.870+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:01:55.872+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:02:33.871+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:02:33.979+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:02:33.983+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:05:55.787+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:05:55.852+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:05:55.853+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:06:21.474+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:06:21.570+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:06:21.572+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:06:37.457+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:06:37.521+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:06:37.523+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:06:47.361+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:06:47.424+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:06:47.425+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:07:01.098+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:07:01.158+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:07:01.160+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:17:09.958+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:17:10.024+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:17:10.026+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:23:50.383+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:23:50.465+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:23:50.469+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:23:58.519+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:23:58.602+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:23:58.605+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:24:07.034+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:24:07.122+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:24:07.125+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:28:52.954+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:28:53.013+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:28:53.014+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:33:44.073+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:33:44.132+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:33:44.133+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:39:55.079+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:39:55.144+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:39:55.146+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:41:04.477+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:41:04.537+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:41:04.539+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:41:56.474+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:41:56.541+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:41:56.543+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:45:20.816+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:45:20.886+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:45:20.888+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:51:43.169+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:51:43.227+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:51:43.228+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:52:46.334+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:52:46.391+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:52:46.393+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:53:56.698+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:53:56.766+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:53:56.769+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:56:44.918+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:56:44.989+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:56:44.992+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T20:58:44.057+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T20:58:44.127+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T20:58:44.129+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T21:00:47.393+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T21:00:47.494+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T21:00:47.495+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T21:32:15.562+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T21:32:15.633+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T21:32:15.635+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T21:36:59.558+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T21:36:59.620+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T21:36:59.621+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T21:37:52.428+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T21:37:52.495+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T21:37:52.497+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T21:38:20.882+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T21:38:20.997+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T21:38:21.001+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T21:41:54.849+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T21:41:54.916+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T21:41:54.918+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T21:42:28.621+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T21:42:28.686+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T21:42:28.689+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T21:47:04.419+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T21:47:04.478+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T21:47:04.479+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T21:49:28.101+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T21:49:28.168+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T21:49:28.170+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T21:59:08.958+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T21:59:09.037+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T21:59:09.040+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T22:06:23.137+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T22:06:23.196+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T22:06:23.198+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T22:10:04.578+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T22:10:04.652+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T22:10:04.655+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T22:12:26.418+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T22:12:26.477+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T22:12:26.478+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T22:13:45.106+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T22:13:45.167+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T22:13:45.169+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T22:18:36.920+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T22:18:37.002+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T22:18:37.005+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:01:17.439+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:01:17.515+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:01:17.517+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:02:26.196+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:02:26.265+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:02:26.268+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:05:13.708+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:05:13.781+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:05:13.783+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:14:07.412+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:14:07.489+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:14:07.490+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:25:38.650+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:25:38.716+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:25:38.718+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:28:33.586+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:28:33.659+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:28:33.661+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:29:21.003+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:29:21.073+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:29:21.076+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:33:48.167+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:33:48.234+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:33:48.236+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:34:45.376+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:34:45.434+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:34:45.436+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:35:42.052+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:35:42.109+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:35:42.111+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:47:59.064+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:47:59.132+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:47:59.134+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:50:27.885+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:50:27.952+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:50:27.954+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-10T23:52:30.518+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-10T23:52:30.599+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-10T23:52:30.602+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:09:37.346+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:10:45.244+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:10:45.374+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:10:45.376+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:15:16.631+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:15:16.689+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:15:16.691+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:16:57.822+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:16:57.888+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:16:57.890+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:17:38.443+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:17:38.501+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:17:38.504+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:21:01.719+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:21:01.798+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:21:01.801+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:21:02.708+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:21:02.800+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:21:02.804+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:21:40.004+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:21:40.093+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:21:40.095+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:21:40.951+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:21:41.048+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:21:41.052+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:21:53.372+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:21:53.437+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:21:53.440+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:22:58.489+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:22:58.551+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:22:58.554+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T14:25:58.228+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T14:25:58.292+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T14:25:58.294+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T15:06:15.154+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T15:06:15.219+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T15:06:15.221+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T15:13:23.589+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T15:13:23.649+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T15:13:23.652+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T15:16:41.146+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T15:16:41.217+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T15:16:41.220+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T15:23:44.232+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T15:23:44.303+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T15:23:44.305+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T15:25:09.906+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T15:25:09.972+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T15:25:09.974+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T15:26:57.786+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T15:26:57.858+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T15:26:57.861+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T15:28:21.982+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T15:28:22.045+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T15:28:22.048+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T15:29:23.365+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T15:29:23.435+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T15:29:23.438+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T15:31:56.255+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T15:31:56.325+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T15:31:56.328+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG
+2022-07-11T15:33:10.952+0800	[34mINFO[0m	logger/logger.go:82	读取配置成功！
+2022-07-11T15:33:11.016+0800	[34mINFO[0m	logger/logger.go:82	连接 Postgres 成功: host=127.0.0.1 user=postgres password=20021217 dbname=postgres port=5432 sslmode=disable TimeZone=Asia/Shanghai
+2022-07-11T15:33:11.020+0800	[34mINFO[0m	logger/logger.go:82	连接 redis 成功: PONG

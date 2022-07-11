@@ -8,7 +8,7 @@
 
 //Author: lxk20021217
 //Date: 2022-06-17 19:06:58
-//LastEditTime: 2022-06-30 00:28:22
+//LastEditTime: 2022-07-11 15:12:41
 //LastEditors: lxk20021217
 //Description:
 //FilePath: \Conship\internal\app\api\api.go
@@ -28,7 +28,7 @@ func Upload(c *gin.Context) {
 	basePath := "./file/"
 	file, err := c.FormFile("content")
 	if err != nil {
-		error.ErrResponse(c, error.BadRequest, error.ErrBadRequest, "配置文件上传失败。", error.WithStack(err))
+		error.ErrResponse(c, error.BadRequest, error.ErrBadRequest, "配置文件上传失败。", err)
 		return
 	}
 
@@ -49,11 +49,11 @@ func Delete(c *gin.Context) {
 }
 
 func Update(c *gin.Context) {
-	s := c.Query("secret")
+	s := c.PostForm("secret")
 	basePath := "./file/"
 	file, err := c.FormFile("content")
 	if err != nil {
-		error.ErrResponse(c, error.BadRequest, error.ErrBadRequest, "配置文件上传失败。", error.WithStack(err))
+		error.ErrResponse(c, error.BadRequest, error.ErrBadRequest, "配置文件上传失败。", err)
 		return
 	}
 	url := utils.RandomUrl(6)
@@ -63,13 +63,13 @@ func Update(c *gin.Context) {
 }
 
 func SearchUrl(c *gin.Context) {
-	u := c.Query("url")
+	u := c.Param("url")
 
 	service.SearchUrl(c, u)
 }
 
 func SearchSecret(c *gin.Context) {
-	s :=c.Query("secret")
+	s := c.Query("secret")
 
 	service.SearchSecret(c, s)
 }
