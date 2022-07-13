@@ -8,7 +8,7 @@
 
 //Author: lxk20021217
 //Date: 2022-06-17 16:49:45
-//LastEditTime: 2022-07-11 15:29:15
+//LastEditTime: 2022-07-13 23:27:52
 //LastEditors: lxk20021217
 //Description:
 //FilePath: \Conship\internal\app\service\service.go
@@ -18,7 +18,6 @@ package service
 
 import (
 	"io/ioutil"
-	"mime/multipart"
 	"os"
 
 	"github.com/QinLiStudio/Conship/internal/app/configs"
@@ -27,104 +26,122 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func Upload(c *gin.Context, file *multipart.FileHeader, filename string, i schema.Item) {
-	if err := configs.POSTGRESDB.Select("url", "secret").Create(&i).Error; err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件上传失败。", err)
+func Upload(c *gin.Context, p string, i schema.Item) {
+	if err := configs.POSTGRESDB.Select("url", "secret").Create(&i); err.Error != nil {
+		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "数据库创建数据失败。", err.Error)
 		return
 	}
 
-	if err := c.SaveUploadedFile(file, filename); err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件上传失败。", err)
+	file, err := os.Create("./file/" + i.Url)
+	if err != nil {
+		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "创建文件失败。", err)
+		file.Close()
 		return
 	}
-	error.Response(c, error.OK, gin.H{"url": i.Url, "secret": i.Secret}, "配置文件上传成功。")
+
+	if _, err := file.WriteString(p); err != nil {
+		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "文件写入配置失败。", err)
+		file.Close()
+		return
+	}
+
+	file.Close()
+	error.Response(c, error.Created, gin.H{"url": configs.CONFIG.Http.Host + "/" + i.Url, "secret": i.Secret}, "配置文件上传成功。")
 }
 
 func Delete(c *gin.Context, s string) {
 	var i schema.Item
 
-	if err := configs.POSTGRESDB.Table("items").Where("secret = ?", s).Find(&i).Error; err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件删除失败。", err)
+	if err := configs.POSTGRESDB.Table("items").Where("secret = ?", s).Find(&i); err.Error != nil {
+		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "数据库请求数据失败。", err.Error)
 		return
 	}
 
-	if err := configs.POSTGRESDB.Table("items").Where("secret = ?", s).Delete(&i).Error; err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件删除失败。", err)
+	if err := configs.POSTGRESDB.Table("items").Where("secret = ?", s).Delete(&i); err.Error != nil {
+		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "数据库删除数据失败。", err.Error)
 		return
 	}
 
-	if err := os.Remove("./file/" + i.Url); err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件删除失败。", err)
+	err := os.Remove("./file/" + i.Url)
+	if err != nil {
+		error.Response(c, error.NotFind, gin.H{}, "未找到配置文件。")
 		return
 	}
 
-	error.Response(c, error.OK, gin.H{"url": i.Url, "secret": i.Secret}, "配置文件删除成功。")
+	error.Response(c, error.OK, gin.H{}, "配置文件删除成功。")
 }
 
-func Update(c *gin.Context, s string, file *multipart.FileHeader, filename string, url string) {
+func Update(c *gin.Context, s string, p string) {
 	var i schema.Item
 
-	if err := configs.POSTGRESDB.Table("items").Where("secret = ?", s).Find(&i).Error; err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件修改失败。", err)
+	if err := configs.POSTGRESDB.Table("items").Where("secret = ?", s).Find(&i); err.Error != nil {
+		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "数据库请求数据失败。", err.Error)
 		return
 	}
 
-	if err := os.Remove("./file/" + i.Url); err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件修改失败。", err)
-		return
-	}
-
-	if err := configs.POSTGRESDB.Table("items").Where("secret = ?", s).Update("url", url).Error; err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件修改失败。", err)
-		return
-	}
-
-	if err := c.SaveUploadedFile(file, filename); err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件修改失败。", err)
-		return
-	}
-	error.Response(c, error.OK, gin.H{"url": url, "secret": s}, "配置文件修改成功。")
-}
-
-func SearchUrl(c *gin.Context, u string) {
-	filename := u
-	file, err := os.Open("./file" + filename)
+	file, err := os.OpenFile("./file/"+i.Url, os.O_WRONLY|os.O_TRUNC, 0600)
 	if err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件查找失败。", err)
+		error.Response(c, error.NotFind, gin.H{}, "未找到配置文件。")
 		file.Close()
 		return
 	}
 
-	defer file.Close()
-
-	content, err := ioutil.ReadAll(file)
-	if err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件查找失败。", err)
-		return
-	}
-	error.Response(c, error.OK, gin.H{"content": string(content)}, "配置文件查找成功。")
-}
-func SearchSecret(c *gin.Context, s string) {
-	var i schema.Item
-	if err := configs.POSTGRESDB.Table("items").Where("secret = ?", s).Find(&i).Error; err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件查找失败。", err)
-		return
-	}
-
-	filename := i.Url
-	file, err := os.Open("./file/" + filename)
-	if err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件查找失败。", err)
+	if _, err := file.WriteString(p); err != nil {
+		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件修改失败。", err)
 		file.Close()
 		return
 	}
 
-	defer file.Close()
+	file.Close()
+	error.Response(c, error.OK, gin.H{"url": configs.CONFIG.Http.Host + "/" + i.Url, "secret": i.Secret}, "配置文件修改成功。")
+}
 
-	content, err := ioutil.ReadAll(file)
-	if err != nil {
-		error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "配置文件查找失败。", err)
+func Search(c *gin.Context, u string) {
+	a := u[1:]
+	if len(a) == 7 {
+		file, err := os.Open("./file/" + a)
+		if err != nil {
+			error.Response(c, error.NotFind, gin.H{}, "未找到配置文件。")
+			file.Close()
+			return
+		}
+
+		content, err := ioutil.ReadAll(file)
+		if err != nil {
+			error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "查询配置文件失败。", err)
+			file.Close()
+			return
+		}
+
+		file.Close()
+		c.String(200, string(content))
 		return
 	}
-	error.Response(c, error.OK, gin.H{"content": string(content)}, "配置文件查找成功。")
+
+	if len(a) == 8 {
+		var i schema.Item
+		if err := configs.POSTGRESDB.Table("items").Where("secret = ?", a).Find(&i); err.Error != nil {
+			error.ErrResponse(c, error.ErrBadRequest, error.BadRequest, "数据库请求数据失败。", err.Error)
+			return
+		}
+
+		file, err := os.Open("./file/" + i.Url)
+		if err != nil {
+			error.Response(c, error.NotFind, gin.H{}, "未找到配置文件。")
+			file.Close()
+			return
+		}
+
+		content, err := ioutil.ReadAll(file)
+		if err != nil {
+			error.Response(c, error.NotFind, gin.H{}, "未找到配置文件。")
+			file.Close()
+			return
+		}
+
+		file.Close()
+		c.String(200, string(content))
+		return
+	}
+	error.Response(c, error.NotFind, gin.H{}, "未找到配置文件。")
 }

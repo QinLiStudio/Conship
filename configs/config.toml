@@ -4,7 +4,7 @@ RunMode = "debug"
 
 [Http]
 # http监听地址
-Host = "0.0.0.0"
+Host = "127.0.0.1"
 # http监听端口
 Port = 8080
 
@@ -37,7 +37,7 @@ DBName = "postgres"
 
 [Limit]
 #路由访问限制
-limit = 100
+limit = 60
 
 [Cors]
 # 是否启用

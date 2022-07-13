@@ -8,7 +8,7 @@
 
 //Author: lxk20021217
 //Date: 2022-06-17 16:25:26
-//LastEditTime: 2022-07-10 22:20:09
+//LastEditTime: 2022-07-13 16:11:25
 //LastEditors: lxk20021217
 //Description:
 //FilePath: \Conship\internal\app\router\router.go
@@ -33,10 +33,7 @@ func RegisterAPI(app *gin.Engine) {
 	{
 		app.POST("/meta", api.Upload)
 		app.PUT("/meta", api.Update)
+		app.DELETE("/meta", api.Delete)
+		app.GET("/meta/*path", api.Search)
 	}
-	app.DELETE("/meta", api.Delete)
-
-	app.GET("/meta/*url", api.SearchUrl)
-	app.GET("/meta", api.SearchSecret)
-
 }

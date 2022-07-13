@@ -1,6 +1,14 @@
 //Author: lxk20021217
 //Date: 2022-06-17 23:49:22
-//LastEditTime: 2022-06-24 15:16:37
+//LastEditTime: 2022-07-13 22:16:55
+//LastEditors: lxk20021217
+//Description:
+//FilePath: \Conship\internal\app\middleware\limit.go
+//是谁总是天亮了才睡
+
+//Author: lxk20021217
+//Date: 2022-06-17 23:49:22
+//LastEditTime: 2022-07-13 22:19:43
 //LastEditors: lxk20021217
 //Description:
 //FilePath: \Conship\internal\app\middleware\limit.go
@@ -9,7 +17,6 @@
 package middleware
 
 import (
-
 	"time"
 
 	"github.com/QinLiStudio/Conship/internal/app/configs"
@@ -32,7 +39,7 @@ func LimitRoute(limit int64) gin.HandlerFunc {
 			c.Next()
 		} else {
 			// 请求次数超过限制
-			error.ErrResponse(c, error.ErrTooManyRequests, error.TooManyRequests, "请求过于频繁，请一小时后再重试。", err)
+			error.Response(c, error.TooManyRequests, gin.H{}, "请求过于频繁。")
 			c.Abort()
 		}
 	}

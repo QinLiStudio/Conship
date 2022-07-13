@@ -43,9 +43,9 @@ type ResponseError struct {
 }
 
 type ResponseNormal struct {
-	Status  int         // 响应状态码
-	Data    interface{} //返回内容
-	Message string      // 返回消息
+	Status  int         		`json:"code"`			// 响应状态码	
+	Data    interface{} 		`json:"data"`			//返回内容
+	Message string      		`json:"msg"`		// 返回消息
 }
 
 func ResponseNor(c *gin.Context, status int, data interface{}, message string) {
