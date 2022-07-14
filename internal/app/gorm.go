@@ -45,7 +45,7 @@ func InitGormDB() (*gorm.DB, func(), error) {
 func NewGormDB() (*gorm.DB, error) {
 	cfg := config.C
 	var dsn string
-	dsn = config.Postgres.DSN(cfg)
+	dsn = config.Postgres.DSN(cfg.Postgres)
 
 	return gormx.New(&gormx.Config{
 		Debug:        cfg.Gorm.Debug,

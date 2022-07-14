@@ -39,3 +39,17 @@ func WithContext(ctx context.Context) *zap.Logger {
 func NewContext(ctx context.Context, fields ...zap.Field) context.Context {
 	return context.WithValue(ctx, logLevel, WithContext(ctx).With(fields...))
 }
+
+func NewTagContext(ctx context.Context, tag string) context.Context {
+	return context.WithValue(ctx, "tag", tag)
+}
+
+func FromTagContext(ctx context.Context) string {
+	v := ctx.Value("tag")
+	if v != nil {
+		if s, ok := v.(string); ok {
+			return s
+		}
+	}
+	return ""
+}

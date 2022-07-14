@@ -8,7 +8,7 @@ import (
 )
 
 // 初始化 logger
-func InitLogger() {
+func InitLogger() error {
 	// 使用 lumberjack 进行日志分割归档
 	lumberJackLogger := lumberjack.Logger{
 		Filename:   "./conship.log", // 日志文件位置
@@ -47,4 +47,11 @@ func InitLogger() {
 	logger := zap.New(core)
 
 	logger.Info("Log initialization successful")
+
+	_, err := NewGormDB()
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

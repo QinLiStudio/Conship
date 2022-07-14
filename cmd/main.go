@@ -1,14 +1,15 @@
-package cmd
+package main
 
 import (
+	"context"
 	"github.com/QinLiStudio/Conship/internal/app"
+	"github.com/QinLiStudio/Conship/pkg/logger"
 	"github.com/urfave/cli/v2"
-	"go.uber.org/zap"
 	"os"
 )
 
 func main() {
-	ctx := app.SugarLogger
+	ctx := logger.NewTagContext(context.Background(), "__main__")
 
 	app := cli.NewApp()
 	app.Name = "conship"
@@ -19,10 +20,24 @@ func main() {
 
 	err := app.Run(os.Args)
 	if err != nil {
-		ctx.Errorf(err.Error())
+		logger.WithContext(ctx).Error(err.Error())
 	}
 }
 
-func newWebCmd(ctx *zap.SugaredLogger) *cli.Command {
-
+func newWebCmd(ctx context.Context) *cli.Command {
+	return &cli.Command{
+		Name:  "web",
+		Usage: "Run http server",
+		Flags: []cli.Flag{
+			&cli.StringFlag{
+				Name:     "config",
+				Usage:    "App configuration file(.toml)",
+				Required: true,
+			},
+		},
+		Action: func(c *cli.Context) error {
+			return app.Run(ctx,
+				app.SetConfigFile(c.String("config")))
+		},
+	}
 }
