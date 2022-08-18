@@ -1,19 +1,3 @@
-//Author: lxk20021217
-//Date: 2022-06-17 16:49:45
-//LastEditTime: 2022-07-02 15:26:58
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\service\service.go
-//是谁总是天亮了才睡
-
-//Author: lxk20021217
-//Date: 2022-06-17 16:49:45
-//LastEditTime: 2022-07-13 23:27:52
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\service\service.go
-//是谁总是天亮了才睡
-
 package service
 
 import (

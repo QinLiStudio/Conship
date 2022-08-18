@@ -1,19 +1,3 @@
-//Author: lxk20021217
-//Date: 2022-06-17 19:06:58
-//LastEditTime: 2022-06-21 22:40:52
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\api.go
-//是谁总是天亮了才睡
-
-//Author: lxk20021217
-//Date: 2022-06-17 19:06:58
-//LastEditTime: 2022-07-13 17:29:10
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\api\api.go
-//是谁总是天亮了才睡
-
 package api
 
 import (
@@ -53,4 +37,3 @@ func Search(c *gin.Context) {
 
 	service.Search(c, u)
 }
-

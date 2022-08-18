@@ -1,19 +1,3 @@
-//Author: lxk20021217
-//Date: 2022-06-17 16:25:26
-//LastEditTime: 2022-06-19 00:16:15
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\router.go
-//是谁总是天亮了才睡
-
-//Author: lxk20021217
-//Date: 2022-06-17 16:25:26
-//LastEditTime: 2022-07-13 16:11:25
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\router\router.go
-//是谁总是天亮了才睡
-
 package router
 
 import (
