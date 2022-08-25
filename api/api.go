@@ -2,15 +2,15 @@
  * @Author: lxk20021217
  * @Date: 2022-08-18 11:01:34
  * @LastEditors: fzf404 nmdfzf404@163.com
- * @LastEditTime: 2022-08-25 15:23:56
+ * @LastEditTime: 2022-08-25 19:14:24
  * @Description: 请求处理
  */
 package api
 
 import (
-	"github.com/QinLiStudio/Conship/internal/app/schema"
-	"github.com/QinLiStudio/Conship/internal/app/service"
+	"github.com/QinLiStudio/Conship/meta"
 	"github.com/QinLiStudio/Conship/pkg/utils"
+	"github.com/QinLiStudio/Conship/service"
 	"github.com/gin-gonic/gin"
 )
 
@@ -18,7 +18,7 @@ import (
 func Upload(c *gin.Context) {
 
 	// 文件内容
-	p := c.PostForm("content")
+	content := c.PostForm("content")
 
 	// 生成链接
 	url := utils.RandomUrl(7)
@@ -27,12 +27,13 @@ func Upload(c *gin.Context) {
 	secret := utils.RandomSecret(8)
 
 	// 数据库信息
-	i := schema.Meta{
-		Url:    url,
-		Secret: secret,
+	m := meta.Meta{
+		Url:     url,
+		Secret:  secret,
+		Content: content,
 	}
 
-	service.Upload(c, p, i)
+	service.Upload(c, m)
 }
 
 // 删除配置文件
@@ -56,7 +57,7 @@ func Update(c *gin.Context) {
 // 查询配置文件
 func Search(c *gin.Context) {
 
-	u := c.Param("path")
+	url := c.Param("path")
 
-	service.Search(c, u)
+	service.Search(c, url)
 }

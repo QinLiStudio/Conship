@@ -1,6 +1,6 @@
 [Mode]
 # 运行模式
-RunMode = "debug" # debug:调试 ｜ test:测试 ｜ release:正式
+RunMode = "release" # debug:调试 ｜ test:测试 ｜ release:正式
 
 [Http]
 # 服务运行配置
@@ -22,7 +22,7 @@ DBName = "conship" # 数据库
 
 [Limit]
 # 访问限制
-Limit = 500 # 每小时 500 次
+Limit = 1000 # 每小时 1000 次
 
 [Cors]
 # 跨域配置

@@ -2,7 +2,7 @@
  * @Author: fzf404
  * @Date: 2022-08-18 11:01:34
  * @LastEditors: fzf404 nmdfzf404@163.com
- * @LastEditTime: 2022-08-25 14:40:32
+ * @LastEditTime: 2022-08-25 20:03:52
  * @Description: 请求限制
  */
 
@@ -11,7 +11,7 @@ package middleware
 import (
 	"time"
 
-	"github.com/QinLiStudio/Conship/internal/app/configs"
+	"github.com/QinLiStudio/Conship/config"
 	"github.com/QinLiStudio/Conship/pkg/response"
 	"github.com/gin-gonic/gin"
 )
@@ -28,24 +28,24 @@ func LimitRoute(limit int64) gin.HandlerFunc {
 		key := c.ClientIP() + c.FullPath()
 
 		// 读取请求次数
-		value, err := configs.REDISDB.Get(key).Int64()
+		value, err := config.REDISDB.Get(key).Int64()
 
 		if err != nil {
 
 			// 初始化请求次数
-			configs.REDISDB.Set(key, 1, time.Hour)
+			config.REDISDB.Set(key, 1, time.Hour)
 			c.Next()
 
 		} else if value < limit {
 
 			// 请求次数递增
-			configs.REDISDB.Incr(key)
+			config.REDISDB.Incr(key)
 			c.Next()
 
 		} else {
 
 			// 请求次数超过限制
-			response.Response(c, response.TooMany, gin.H{}, "请求过于频繁")
+			response.Error(c, response.TooMany, "请求过于频繁")
 			c.Abort()
 
 		}
@@ -63,15 +63,15 @@ func LimitAverageRoute(limit int64) gin.HandlerFunc {
 		key := c.ClientIP() + c.FullPath()
 
 		// 读取值并验证
-		if err := configs.REDISDB.Get(key).Err(); err != nil {
+		if err := config.REDISDB.Get(key).Err(); err != nil {
 
 			// 初始化请求次数
-			configs.REDISDB.Set(key, 1, time.Hour/time.Duration(limit))
+			config.REDISDB.Set(key, 1, time.Hour/time.Duration(limit))
 			c.Next()
 
 		} else {
 
-			response.Response(c, response.TooMany, response.TooMany, "请求过于频繁，请一小时后再重试")
+			response.Ok(c, response.TooMany, response.TooMany, "请求过于频繁，请一小时后再重试")
 			c.Abort()
 
 		}

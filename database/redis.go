@@ -2,14 +2,14 @@
  * @Author: lxk20021217
  * @Date: 2022-08-18 11:01:34
  * @LastEditors: fzf404 nmdfzf404@163.com
- * @LastEditTime: 2022-08-25 16:57:35
+ * @LastEditTime: 2022-08-25 18:38:06
  * @Description: Redis 连接
  */
 
-package db
+package database
 
 import (
-	"github.com/QinLiStudio/Conship/internal/app/configs"
+	"github.com/QinLiStudio/Conship/config"
 	"github.com/QinLiStudio/Conship/pkg/logger"
 	"github.com/go-redis/redis"
 )
@@ -17,7 +17,7 @@ import (
 func InitRedis() {
 
 	// 获取 redis 配置
-	r := configs.CONFIG.Redis
+	r := config.CONFIG.Redis
 
 	// 建立连接
 	client := redis.NewClient(&redis.Options{
@@ -34,7 +34,7 @@ func InitRedis() {
 
 	} else {
 
-		configs.REDISDB = client
+		config.REDISDB = client
 
 		logger.Info("连接 redis 成功: %v", pong)
 

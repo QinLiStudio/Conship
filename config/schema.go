@@ -2,10 +2,10 @@
  * @Author: fzf404
  * @Date: 2022-08-18 11:01:34
  * @LastEditors: fzf404 nmdfzf404@163.com
- * @LastEditTime: 2022-08-25 14:11:37
+ * @LastEditTime: 2022-08-25 19:08:21
  * @Description: 配置模型
  */
-package configs
+package config
 
 type Config struct {
 	Mode     Mode
@@ -45,7 +45,7 @@ type Postgres struct {
 	DBName   string
 }
 
-func Dsn(r Postgres) string {
+func (r Postgres) Dsn() string {
 	return "host=" + r.Host + " user=" + r.User + " password=" + r.Password + " dbname=" + r.DBName + " port=" + r.Port + " sslmode=disable TimeZone=Asia/Shanghai"
 }
 
