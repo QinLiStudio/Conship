@@ -1,77 +1,48 @@
-
-//Author: lxk20021217
-//Date: 2022-06-16 19:56:00
-//LastEditTime: 2022-07-02 17:32:35
-//LastEditors: lxk20021217
-//Description: 
-//FilePath: \Conship\pkg\logger\logger.go
-//是谁总是天亮了才睡
-
-//Author: lxk20021217
-//Date: 2022-06-16 19:56:00
-//LastEditTime: 2022-06-24 15:14:58
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\pkg\logger\logger.go
-//是谁总是天亮了才睡
+/*
+ * @Author: fzf404
+ * @Date: 2022-08-18 11:01:34
+ * @LastEditors: fzf404 nmdfzf404@163.com
+ * @LastEditTime: 2022-08-25 17:26:00
+ * @Description: Zap 初始化
+ */
 
 package logger
 
 import (
 	"os"
+	"time"
 
-	"github.com/natefinch/lumberjack"
+	ginzap "github.com/gin-contrib/zap"
+	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
 
 var log *zap.SugaredLogger
+var logger *zap.Logger
 
-type Level = zapcore.Level
-
-const (
-	DebugLevel Level = -1
-
-	InfoLevel Level = iota
-	WarnLevel
-	ErrorLevel
-	PanicLevel
-)
-
+// 初始化 Zap
 func InitZap() {
-	encoderConfig := zap.NewProductionEncoderConfig()
-	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
-	encoderConfig.EncodeLevel = zapcore.CapitalColorLevelEncoder
-	encoder := zapcore.NewConsoleEncoder(encoderConfig)
 
-	highlevel := zap.LevelEnablerFunc(func(l zapcore.Level) bool {
-		return l >= zap.ErrorLevel
-	})
-	lowlevel := zap.LevelEnablerFunc(func(l zapcore.Level) bool {
-		return l < zap.ErrorLevel && l >= zap.DebugLevel
-	})
-
-	lowFileWriteSyncer := zapcore.AddSync(&lumberjack.Logger{
-		Filename:   "./tem/low.log",
-		MaxSize:    1,
-		MaxBackups: 5,
-		MaxAge:     30,
-		Compress:   false,
-	})
-	lowFileCore := zapcore.NewCore(encoder, zapcore.NewMultiWriteSyncer(lowFileWriteSyncer, zapcore.AddSync(os.Stdout)), lowlevel)
-
-	highFileWriteSyncer := zapcore.AddSync(&lumberjack.Logger{
-		Filename:   "./tem/high.log",
-		MaxSize:    1,
-		MaxBackups: 5,
-		MaxAge:     30,
-		Compress:   false,
-	})
-	highFileCore := zapcore.NewCore(encoder, zapcore.NewMultiWriteSyncer(highFileWriteSyncer, zapcore.AddSync(os.Stdout)), highlevel)
-
-	core := zapcore.NewTee(highFileCore, lowFileCore)
-	logger := zap.New(core, zap.AddCaller())
+	config := zap.NewProductionEncoderConfig()                                          // 初始化 Zap 配置
+	config.EncodeTime = zapcore.RFC3339TimeEncoder                                      // 配置时间格式
+	fileEncoder := zapcore.NewJSONEncoder(config)                                       // 初始化日志输出
+	consoleEncoder := zapcore.NewConsoleEncoder(config)                                 // 初始化控制台输出
+	logFile, _ := os.OpenFile("conship.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644) // 初始化日志文件
+	writer := zapcore.AddSync(logFile)                                                  // 增加异步写入
+	defaultLogLevel := zapcore.DebugLevel                                               // 默认日志级别
+	core := zapcore.NewTee(                                                             // 日志分发通道
+		zapcore.NewCore(fileEncoder, writer, defaultLogLevel),
+		zapcore.NewCore(consoleEncoder, zapcore.AddSync(os.Stdout), defaultLogLevel),
+	)
+	logger = zap.New(core, zap.AddCaller(), zap.AddStacktrace(zapcore.ErrorLevel)) // 初始化 Zap
 	log = logger.Sugar()
+}
+
+// 初始化 GinZap 日志
+func InitGinZap(r *gin.Engine) {
+	r.Use(ginzap.Ginzap(logger, time.RFC3339, true))
+	r.Use(ginzap.RecoveryWithZap(logger, true))
 }
 
 func Debug(template string, args ...interface{}) {

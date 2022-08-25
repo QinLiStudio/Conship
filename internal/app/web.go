@@ -1,39 +1,38 @@
-//Author: lxk20021217
-//Date: 2022-06-21 22:04:30
-//LastEditTime: 2022-07-05 15:08:16
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\web.go
-//是谁总是天亮了才睡
-
-//Author: lxk20021217
-//Date: 2022-06-21 22:04:30
-//LastEditTime: 2022-07-08 21:31:57
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\web.go
-//是谁总是天亮了才睡
+/*
+ * @Author: lxk20021217
+ * @Date: 2022-08-18 11:01:34
+ * @LastEditors: fzf404 nmdfzf404@163.com
+ * @LastEditTime: 2022-08-25 17:05:15
+ * @Description: 应用入口
+ */
 
 package app
 
 import (
 	"github.com/QinLiStudio/Conship/internal/app/configs"
+
 	"github.com/QinLiStudio/Conship/internal/app/middleware"
 	"github.com/QinLiStudio/Conship/internal/app/router"
+	"github.com/QinLiStudio/Conship/pkg/logger"
 	"github.com/gin-gonic/gin"
 )
 
 func InitGinEngine() *gin.Engine {
-	gin.SetMode(configs.CONFIG.Mode.Runmode)
 
+	// 设置运行模式
+	gin.SetMode(configs.CONFIG.Mode.RunMode)
+
+	// 初始化 Gin 引擎
 	app := gin.Default()
 
-	// CORS
+	// 初始化 GinZap 日志
+	logger.InitGinZap(app)
+	
+	// 跨域中间件
 	if configs.CONFIG.Cors.Enable {
 		app.Use(middleware.Cors())
 	}
-
-	// Router register
+	// 注册路由
 	router.Register(app)
 
 	return app

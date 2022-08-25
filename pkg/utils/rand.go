@@ -1,18 +1,10 @@
-//Author: lxk20021217
-//Date: 2022-06-20 00:32:05
-//LastEditTime: 2022-06-24 16:19:02
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\pkg\utils\rand.go
-//是谁总是天亮了才睡
-
-//Author: lxk20021217
-//Date: 2022-06-20 00:32:05
-//LastEditTime: 2022-07-13 21:09:25
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\pkg\utils\rand.go
-//是谁总是天亮了才睡
+/*
+ * @Author: fzf404
+ * @Date: 2022-08-18 11:01:34
+ * @LastEditors: fzf404 nmdfzf404@163.com
+ * @LastEditTime: 2022-08-25 17:29:16
+ * @Description: 随机数生成
+ */
 
 package utils
 

@@ -1,18 +1,10 @@
-//Author: lxk20021217
-//Date: 2022-06-17 16:28:47
-//LastEditTime: 2022-06-30 00:55:58
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\configs\config.go
-//是谁总是天亮了才睡
-
-//Author: lxk20021217
-//Date: 2022-06-17 16:28:47
-//LastEditTime: 2022-07-10 15:39:03
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\configs\config.go
-//是谁总是天亮了才睡
+/*
+ * @Author: lxk20021217
+ * @Date: 2022-08-18 11:01:34
+ * @LastEditors: fzf404 nmdfzf404@163.com
+ * @LastEditTime: 2022-08-25 16:43:13
+ * @Description: 加载配置
+ */
 
 package configs
 
@@ -33,8 +25,7 @@ func InitConfig() {
 
 	viper.SetConfigFile("./configs/config.toml")
 
-	err := viper.ReadInConfig()
-	if err != nil {
+	if err := viper.ReadInConfig(); err != nil {
 		logger.Error("读取配置失败: %v", err)
 		return
 	}
@@ -45,9 +36,4 @@ func InitConfig() {
 	}
 
 	logger.Info("读取配置成功！")
-	//viper.WatchConfig()
-	//viper.OnConfigChange(func(e fsnotify.Event) {
-	// 配置文件发生变更之后会调用的回调函数
-	//	fmt.Println("配置文件更改:", e.Name)
-	//})
 }

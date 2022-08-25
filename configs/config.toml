@@ -1,60 +1,34 @@
 [Mode]
-# 运行模式(debug:调试,test:测试,release:正式)
-RunMode = "debug"
+# 运行模式
+RunMode = "debug" # debug:调试 ｜ test:测试 ｜ release:正式
 
 [Http]
-# http监听地址
-Host = "127.0.0.1"
-# http监听端口
-Port = 8080
+# 服务运行配置
+Host = "127.0.0.1" # 监听主机
+Port = 8080 # 监听配置
 
-[Log]
-# 日志级别(-1:debug,0:info 1:warn,2:error,3:panic)
-Level = 0
-# 日志格式（支持输出格式：text/json）
-Format = "json"
-# 日志输出(支持：stdout/stderr/file)
-Output = "stdout"
-
-# redis配置信息
 [Redis]
-# 地址
-Addr = "127.0.0.1:6379"
-# 密码
-Password = ""
+# redis 配置
+Addr = "127.0.0.1:6379" # 地址
+Password = "" # 密码
 
 [Postgres]
-# 连接地址
-Host = "127.0.0.1"
-# 连接端口
-Port = 5432
-# 用户名
-User = "postgres"
-# 密码
-Password = "20021217"
-# 数据库
-DBName = "postgres"
+# postgrey 配置
+Host = "127.0.0.1" # 地址
+Port = 5432 # 端口
+User = "conship" # 用户名
+Password = "conship" # 密码
+DBName = "conship" # 数据库
 
 [Limit]
-#路由访问限制
-limit = 60
+# 访问限制
+Limit = 500 # 每小时 500 次
 
 [Cors]
-# 是否启用
-Enable = false
-# 允许跨域请求的域名列表(*表示全部允许)
-AllowOrigins = ["*"]
-# 允许跨域请求的请求方式列表
-AllowMethods = ["GET", "POST", "PUT", "DELETE", "PATCH"]
-# 允许客户端与跨域请求一起使用的非简单标头的列表
-AllowHeaders = []
-# 请求是否可以包含cookie，HTTP身份验证或客户端SSL证书等用户凭据
-AllowCredentials = true
-# 可以缓存预检请求结果的时间（以秒为单位）
-MaxAge = 7200
+# 跨域配置
+Enable = true # 是否开启跨域限制
 
-[Gorm]
-# 是否开启调试模式
-Debug = true
-# 数据库类型(目前支持的数据库类型：mysql/sqlite3/postgres)
-DBType = "postgres"
+AllowOrigins = ["*"] # 允许列表：* 表示全部允许
+AllowMethods = ["GET", "POST", "PUT", "DELETE"] # 允许请求方式
+AllowHeaders = [] # 允许特殊请求头
+MaxAge = 7200 # 可以缓存的时间

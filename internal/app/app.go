@@ -1,19 +1,10 @@
-//Author: lxk20021217
-//Date: 2022-06-16 19:56:00
-//LastEditTime: 2022-07-08 15:08:30
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\app.go
-//是谁总是天亮了才睡
-
-//Author: lxk20021217
-//Date: 2022-06-16 19:56:00
-//LastEditTime: 2022-07-09 16:19:32
-//LastEditors: lxk20021217
-//Description:
-//FilePath: \Conship\internal\app\app.go
-//是谁总是天亮了才睡
-
+/*
+ * @Author: lxk20021217
+ * @Date: 2022-08-18 11:01:34
+ * @LastEditors: fzf404 nmdfzf404@163.com
+ * @LastEditTime: 2022-08-25 16:42:58
+ * @Description: 应用入口
+ */
 package app
 
 import (
@@ -24,10 +15,10 @@ import (
 )
 
 func Init() *gin.Engine {
-	logger.InitZap()
-	configs.InitConfig()
-	db.InitPostgres()
-	db.InitRedis()
-	r := InitGinEngine()
+	logger.InitZap()     // 初始化日志
+	configs.InitConfig() // 初始化配置
+	db.InitPostgres()    // 初始化 Postgres
+	db.InitRedis()       // 初始化 Redis
+	r := InitGinEngine() // 初始化 Gin 引擎
 	return r
 }
