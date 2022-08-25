@@ -1,11 +1,9 @@
 FROM golang:1.18-alpine AS build
 
-RUN apk update && apk add --no-cache git
 
 WORKDIR /build
-RUN git clone --recurse-submodules https://github.com/QinLiStudio/Conship.git
+COPY . .
 RUN go build -o main main.go
-
 
 
 FROM alpine:latest
@@ -16,4 +14,4 @@ COPY --from=build /build/config/config.toml ./config/config.toml
 COPY --from=build /build/main ./main
 
 EXPOSE 8080
-ENTRYPOINT ["/main"]
+ENTRYPOINT ["/app/main"]

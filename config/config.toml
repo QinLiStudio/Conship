@@ -9,12 +9,12 @@ Port = 8080 # 监听配置
 
 [Redis]
 # redis 配置
-Addr = "127.0.0.1:6379" # 地址
+Addr = "redis:6379" # 地址
 Password = "" # 密码
 
 [Postgres]
-# postgrey 配置
-Host = "127.0.0.1" # 地址
+# postgres 配置
+Host = "postgres" # 地址
 Port = 5432 # 端口
 User = "conship" # 用户名
 Password = "conship" # 密码
