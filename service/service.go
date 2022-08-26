@@ -2,7 +2,7 @@
  * @Author: fzf404
  * @Date: 2022-08-18 11:01:34
  * @LastEditors: fzf404 nmdfzf404@163.com
- * @LastEditTime: 2022-08-25 20:46:35
+ * @LastEditTime: 2022-08-26 21:13:05
  * @Description: 服务
  */
 package service
@@ -45,7 +45,7 @@ func Upload(c *gin.Context, m meta.Meta) {
 	// 写入 Redis 缓存
 	config.REDISDB.Set(m.Url, m.Content, time.Hour)
 
-	response.Ok(c, response.Created, gin.H{"url": config.CONFIG.Http.Url + "/" + m.Url, "secret": m.Secret}, "配置文件上传成功")
+	response.Ok(c, response.Created, gin.H{"url": config.CONFIG.Http.Url + "/meta/" + m.Url, "secret": m.Secret}, "配置文件上传成功")
 }
 
 /**
@@ -109,7 +109,7 @@ func Update(c *gin.Context, secret string, content string) {
 	// 写入 Redis 缓存
 	config.REDISDB.Set(m.Url, m.Content, time.Hour)
 
-	response.Ok(c, response.OK, gin.H{"url": config.CONFIG.Http.Url + "/" + m.Url, "secret": m.Secret}, "配置文件修改成功")
+	response.Ok(c, response.OK, gin.H{"url": config.CONFIG.Http.Url + "/meta/" + m.Url, "secret": m.Secret}, "配置文件修改成功")
 }
 
 /**
