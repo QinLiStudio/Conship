@@ -1,28 +1,15 @@
 version: '3'
 
-networks:
-  backend:
-
-volumes:
-  data:
-
 services:
-  conship:
-    image: qlstudio/conship:latest
-    depends_on:
-      - redis
-      - postgres
-    networks:
-      - backend
+  golang:
+    image: golang:1.18-alpine
+    environment:
+      - GOPROXY=https://goproxy.cn,direct
+    volumes:
+      - .:/code
     ports:
       - '8080:8080'
-
-  redis:
-    image: redis:6-alpine
-    networks:
-      - backend
-    # ports:
-    #   - '6379:6379'
+    stdin_open: true # 允许外部输入
 
   postgres:
     image: postgres:14-alpine
@@ -30,9 +17,10 @@ services:
       POSTGRES_DB: conship
       POSTGRES_USER: conship
       POSTGRES_PASSWORD: conship
-    volumes:
-      - data:/var/lib/postgresql/data
-    networks:
-      - backend
-    # ports:
-    #   - '5432:5432'
+    ports:
+      - '5432:5432'
+
+  redis:
+    image: redis:6-alpine
+    ports:
+      - '6379:6379'
