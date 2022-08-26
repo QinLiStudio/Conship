@@ -35,5 +35,8 @@ func InitConfig() {
 		return
 	}
 
+	// 计算配置文件大小限制
+	CONFIG.Limit.Content = CONFIG.Limit.Content * 1024 * 1024
+
 	logger.Info("读取配置成功！")
 }

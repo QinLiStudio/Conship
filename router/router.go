@@ -1,5 +1,5 @@
 /*
- * @Author: lxk20021217
+ * @Author: fzf404
  * @Date: 2022-08-18 11:01:34
  * @LastEditors: fzf404 nmdfzf404@163.com
  * @LastEditTime: 2022-08-25 20:40:41
@@ -16,6 +16,7 @@ import (
 )
 
 func InitRouter() *gin.Engine {
+
 	// 设置运行模式
 	gin.SetMode(config.CONFIG.Mode.RunMode)
 
@@ -30,13 +31,16 @@ func InitRouter() *gin.Engine {
 		app.Use(middleware.Cors())
 	}
 
-	// 限流
-	app.Use(middleware.LimitRoute(config.CONFIG.Limit.Limit))
-	{
-		app.POST("/meta", api.Upload)
-		app.PUT("/meta", api.Update)
-		app.DELETE("/meta", api.Delete)
-		app.GET("/meta/:path", api.Search)
+	// 限流中间件
+	if config.CONFIG.Mode.RunMode == gin.ReleaseMode {
+		app.Use(middleware.LimitRoute(config.CONFIG.Limit.Request))
 	}
+
+	// 路由
+	app.POST("/meta", api.Upload)
+	app.PUT("/meta", api.Update)
+	app.DELETE("/meta", api.Delete)
+	app.GET("/meta/:path", api.Search)
+
 	return app
 }

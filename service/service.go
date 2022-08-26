@@ -25,15 +25,27 @@ import (
  */
 func Upload(c *gin.Context, m meta.Meta) {
 
-	// 写入数据库
-	if err := config.POSTGRESDB.Create(&m); err.Error != nil {
-		response.Error(c, response.ServerErr, "数据库写入失败")
+	// 校验配置文件
+	if len(m.Content) > config.CONFIG.Limit.Content {
+		response.Error(c, response.TooLarge, "配置文件过大")
 		return
 	}
-	// 写入 Redis
-	config.REDISDB.Set(m.Secret, m.Content, time.Hour)
 
-	response.Ok(c, response.Created, gin.H{"url": config.CONFIG.Http.Host + "/" + m.Url, "secret": m.Secret}, "配置文件上传成功")
+	if len(m.Content) == 0 {
+		response.Error(c, response.Bad, "配置文件为空")
+		return
+	}
+
+	// 写入数据库
+	if err := config.POSTGRESDB.Create(&m); err.Error != nil {
+		response.Error(c, response.ServerErr, "配置文件写入失败")
+		return
+	}
+
+	// 写入 Redis 缓存
+	config.REDISDB.Set(m.Url, m.Content, time.Hour)
+
+	response.Ok(c, response.Created, gin.H{"url": config.CONFIG.Http.Url + "/" + m.Url, "secret": m.Secret}, "配置文件上传成功")
 }
 
 /**
@@ -45,15 +57,18 @@ func Upload(c *gin.Context, m meta.Meta) {
 func Delete(c *gin.Context, secret string) {
 	var m meta.Meta
 
-	if err := config.POSTGRESDB.Where("secret = ?", secret).Find(&m); err.Error != nil {
-		response.Error(c, response.ServerErr, "未找到配置文件")
+	if err := config.POSTGRESDB.Where("secret = ?", secret).First(&m); err.Error != nil {
+		response.Error(c, response.NotFind, "配置文件未找到")
 		return
 	}
 
 	if err := config.POSTGRESDB.Where("secret = ?", secret).Delete(&m); err.Error != nil {
-		response.Error(c, response.ServerErr, "删除数据失败")
+		response.Error(c, response.ServerErr, "配置文件删除失败")
 		return
 	}
+
+	// 删除 Redis 缓存
+	config.REDISDB.Del(m.Url)
 
 	response.Ok(c, response.OK, gin.H{}, "配置文件删除成功")
 }
@@ -68,17 +83,33 @@ func Delete(c *gin.Context, secret string) {
 func Update(c *gin.Context, secret string, content string) {
 	var m meta.Meta
 
-	if err := config.POSTGRESDB.Where("secret = ?", secret).Find(&m); err.Error != nil {
-		response.Ok(c, response.ServerErr, response.ServerErr, "未找到配置文件")
-		return
-	}
-	m.Content = content
-	if err := config.POSTGRESDB.Updates(&m); err.Error != nil {
-		response.Ok(c, response.ServerErr, response.ServerErr, "未找到配置文件")
+	if err := config.POSTGRESDB.Where("secret = ?", secret).First(&m); err.Error != nil {
+		response.Error(c, response.NotFind, "配置文件未找到")
 		return
 	}
 
-	response.Ok(c, response.OK, gin.H{"url": config.CONFIG.Http.Host + "/" + m.Url, "secret": m.Secret}, "配置文件修改成功")
+	// 校验配置文件
+	if len(content) > config.CONFIG.Limit.Content {
+		response.Error(c, response.TooLarge, "配置文件过大")
+		return
+	}
+
+	if len(content) == 0 {
+		response.Error(c, response.Bad, "配置文件为空")
+		return
+	}
+
+	m.Content = content
+
+	if err := config.POSTGRESDB.Updates(&m); err.Error != nil {
+		response.Error(c, response.ServerErr, "数据库请求数据失败")
+		return
+	}
+
+	// 写入 Redis 缓存
+	config.REDISDB.Set(m.Url, m.Content, time.Hour)
+
+	response.Ok(c, response.OK, gin.H{"url": config.CONFIG.Http.Url + "/" + m.Url, "secret": m.Secret}, "配置文件修改成功")
 }
 
 /**
@@ -89,26 +120,47 @@ func Update(c *gin.Context, secret string, content string) {
  */
 func Search(c *gin.Context, url string) {
 
+	var m meta.Meta
+
+	// 通过 url 读取配置文件
 	if len(url) == 7 {
-		var m meta.Meta
-		if err := config.POSTGRESDB.Where("url = ?", url).Find(&m); err.Error != nil {
-			response.Error(c, response.ServerErr, "数据库请求数据失败")
-			return
+
+		// 从缓存中读取
+		value, err := config.REDISDB.Get(url).Result()
+
+		if err != nil {
+
+			// 未命中缓存
+			if err := config.POSTGRESDB.Where("url = ?", url).First(&m); err.Error != nil {
+				response.Error(c, response.NotFind, "配置文件未找到")
+				return
+			}
+
+			// 写入 Redis 缓存
+			config.REDISDB.Set(m.Url, m.Content, time.Hour)
+
+		} else {
+
+			// 命中缓存
+			m.Content = value
 		}
 
 		c.String(200, m.Content)
 		return
 	}
 
+	// 通过 secret 读取配置文件
 	if len(url) == 8 {
-		var m meta.Meta
-		if err := config.POSTGRESDB.Where("secret = ?", url).Find(&m); err.Error != nil {
-			response.Ok(c, response.ServerErr, response.ServerErr, "数据库请求数据失败")
+
+		// 通过 secret 读取配置文件
+		if err := config.POSTGRESDB.Where("secret = ?", url).First(&m); err.Error != nil {
+			response.Error(c, response.NotFind, "配置文件未找到")
 			return
 		}
 
 		c.String(200, m.Content)
 		return
 	}
-	response.Ok(c, response.NotFind, gin.H{}, "未找到配置文件")
+
+	response.Error(c, response.NotFind, "配置文件未找到")
 }

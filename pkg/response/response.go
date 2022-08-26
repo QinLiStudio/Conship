@@ -16,11 +16,12 @@ const (
 	OK      = 200 // 请求成功
 	Created = 201 // 创建成功
 
-	// Bad       = 400 // 请求错误
+	Bad = 400 // 参数错误
 	// UnAuth    = 401 // 未经授权
 	// Forbidden = 403 // 禁止请求
-	NotFind = 404 // 找不到
-	TooMany = 429 // 请求频繁
+	NotFind  = 404 // 找不到
+	TooLarge = 413 // 请求过大
+	TooMany  = 429 // 请求频繁
 
 	ServerErr = 500 // 服务器错误
 )

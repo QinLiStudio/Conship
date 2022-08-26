@@ -30,7 +30,7 @@ func InitRedis() {
 
 	if err != nil {
 
-		logger.Error("连接 redis 失败: %v", err)
+		logger.Panic("连接 redis 失败: %v", err)
 
 	} else {
 

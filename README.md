@@ -22,7 +22,9 @@ mkdir -p conship/config && cd conship
 RunMode = "release" # debug:调试 ｜ test:测试 ｜ release:正式
 
 [Http]
+[Http]
 # 服务运行配置
+Url = "https://qlapi.sylu.edu.cn/conship"
 Host = "127.0.0.1" # 监听主机
 Port = 8080 # 监听配置
 
@@ -41,7 +43,8 @@ DBName = "conship" # 数据库
 
 [Limit]
 # 访问限制
-Limit = 1000 # 每小时 1000 次
+Content = 2 # 文件大小限制 MB
+Request = 1000 # 每小时 1000 次
 
 [Cors]
 # 跨域配置
@@ -50,7 +53,6 @@ Enable = true # 是否开启跨域限制
 AllowOrigins = ["*"] # 允许列表：* 表示全部允许
 AllowMethods = ["GET", "POST", "PUT", "DELETE"] # 允许请求方式
 AllowHeaders = [] # 允许特殊请求头
-MaxAge = 7200 # 可以缓存的时间
 ```
 
 3. 创建 `docker-compose.yml`
@@ -85,8 +87,9 @@ services:
     #   - '6379:6379'
 ```
 
-3. 运行
+4. 运行
 
 ```bash
+docker pull qlstudio/conship:latest
 docker-compose up -d
 ```

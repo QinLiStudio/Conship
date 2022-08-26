@@ -10,7 +10,6 @@ package config
 type Config struct {
 	Mode     Mode
 	Http     Http
-	Log      Log
 	Redis    Redis
 	Postgres Postgres
 	Limit    Limit
@@ -22,14 +21,9 @@ type Mode struct {
 }
 
 type Http struct {
+	Url string
 	Host string
 	Port string
-}
-
-type Log struct {
-	Level  int
-	Format string
-	Outout string
 }
 
 type Redis struct {
@@ -50,7 +44,8 @@ func (r Postgres) Dsn() string {
 }
 
 type Limit struct {
-	Limit int64
+	Request int64
+	Content int
 }
 
 type Cors struct {
