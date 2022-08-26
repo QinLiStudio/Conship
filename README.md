@@ -22,7 +22,6 @@ mkdir -p conship/config && cd conship
 RunMode = "release" # debug:调试 ｜ test:测试 ｜ release:正式
 
 [Http]
-[Http]
 # 服务运行配置
 Url = "https://qlapi.sylu.edu.cn/conship"
 Host = "127.0.0.1" # 监听主机
