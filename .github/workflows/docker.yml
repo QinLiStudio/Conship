@@ -13,20 +13,20 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v3
-      -
+      - # 获取仓库信息
         name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
         with:
           images: qlstudio/conship
-      -
+      - # 登陆 DockerHub
         name: Login to DockerHub
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      -
+      - # 构建并推送镜像
         name: Build and push
         uses: docker/build-push-action@v3
         with:
@@ -34,3 +34,11 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - # 更新 DockerHub README
+        name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: qlstudio/conship
+          short-description: ${{ github.event.repository.description }}
