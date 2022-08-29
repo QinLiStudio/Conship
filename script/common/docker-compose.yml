@@ -1,14 +1,15 @@
 version: '3'
 
 services:
-  conship:
-    image: qlstudio/conship:latest
-    restart: unless-stopped
+  golang:
+    image: golang:1.18-alpine
+    environment:
+      - GOPROXY=https://goproxy.cn,direct
     volumes:
-      - ./log:/app/log
-      - ./config:/app/config
+      - .:/code
     ports:
       - '8080:8080'
+    stdin_open: true
 
   postgres:
     image: postgres:14-alpine
@@ -16,12 +17,10 @@ services:
       POSTGRES_DB: conship
       POSTGRES_USER: conship
       POSTGRES_PASSWORD: conship
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
-    # ports:
-    #   - '5432:5432'
+    ports:
+      - '5432:5432'
 
   redis:
     image: redis:6-alpine
-    # ports:
-    #   - '6379:6379'
+    ports:
+      - '6379:6379'
